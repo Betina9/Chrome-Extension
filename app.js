@@ -5,7 +5,8 @@ const ulEl = document.getElementById("ul-el");
 
 inputBtn.addEventListener("click", function () {
   myLeads.push(inputEl.value);
-  console.log(myLeads);
+  inputEl.value = "";
+  renderLeads();
 });
 
 function renderLeads() {
