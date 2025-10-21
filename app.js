@@ -1,21 +1,25 @@
-let myLeads = [];
+let myLead = [];
 const inputEl = document.getElementById("input-el");
 const inputBtn = document.getElementById("input-btn");
 const ulEl = document.getElementById("ul-el");
 
 inputBtn.addEventListener("click", function () {
-  myLeads.push(inputEl.value);
+  myLead.push(inputEl.value);
   inputEl.value = "";
-  renderLeads();
+  renderLead();
 });
 
-function renderLeads() {
-  ulEl.innerHTML = "";
+function renderLead() {
+  let listItems = "";
 
-  for (let i = 0; i < myLeads.length; i++) {
-    const li = document.createElement("li");
-    li.textContent = myLeads[i];
-    ulEl.append(li);
+  for (let i = 0; i < myLead.length; i++) {
+    listItems += `
+      <li>
+        <a target='_blank' href='${myLead[i]}'>
+          ${myLead[i]}
+        </a>
+      </li>
+    `;
+    ulEl.innerHTML = listItems;
   }
 }
-renderLeads();
